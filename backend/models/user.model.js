@@ -3,4 +3,4 @@ const userSchema = new mongoose.Schema({
   name: String,
   email: { type: String, required: true, unique: true }
 });
-export default User=mongoose.model('User', userSchema);
+export const User=new mongoose.model('User', userSchema);
