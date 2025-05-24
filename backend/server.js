@@ -9,15 +9,9 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-const corsOptions = {
-  origin: 'https://unit-test-app-1.vercel.app/api/users', 
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  optionsSuccessStatus: 200,
-};
 
-app.use(cors(corsOptions));
-app.use('/', router);
+app.use(cors());
+app.use('/api/users', router);
 
 const PORT = process.env.PORT || 5000;
 
