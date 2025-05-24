@@ -7,6 +7,7 @@ import router from './routes/user.routes.js';
 dotenv.config();
 
 const app = express();
+app.use(express.json());
 
 const corsOptions = {
   origin: 'https://unit-test-app-1.vercel.app', 
@@ -16,9 +17,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-
-app.use(express.json());
-
 app.use('/api/users', router);
 
 const PORT = process.env.PORT || 5000;
