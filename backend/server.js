@@ -6,7 +6,12 @@ import router from './routes/user.routes.js';
 
 dotenv.config();
 const app = express();
-app.use(cors());
+
+app.use(cors({
+  origin: 'https://unit-test-app-1.vercel.app', 
+  optionsSuccessStatus: 200,
+}));
+
 app.use(express.json());
 
 app.use(express.json());
